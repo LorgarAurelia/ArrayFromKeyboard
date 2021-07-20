@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ArrayFromKeyboard
 {
@@ -15,10 +11,11 @@ namespace ArrayFromKeyboard
 
             for (int i = 0; i < arrayOfInputData.Length; i++)
             {
+                Console.WriteLine("Введите число, которое будет храниться под индексом " + i);
                 arrayOfInputData[i] = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine(arrayOfInputData[1]);
+            Console.WriteLine("Введённые вами числа: " + arrayOfInputData[0] + " " + arrayOfInputData[1] + " " + arrayOfInputData[2]);
             Console.ReadLine();
         }
     }
