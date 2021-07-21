@@ -6,16 +6,46 @@ namespace ArrayFromKeyboard
     {
         static void Main(string[] args)
         {
+            Console.Write("Введите количество элементов массива: \t");
+
+            uint elementsCount = 0;
+
+            try
+            {
+                elementsCount = uint.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Вы ввели некорректные данные для определения размера массива. Подходят только целые, положительные числа.");
+                Environment.Exit(0);
+            }
+            
+
             int[] arrayOfInputData;
-            arrayOfInputData = new int[3];
+            arrayOfInputData = new int[elementsCount];
 
             for (int i = 0; i < arrayOfInputData.Length; i++)
             {
                 Console.WriteLine("Введите число, которое будет храниться под индексом " + i);
-                arrayOfInputData[i] = int.Parse(Console.ReadLine());
+                try
+                {
+                    arrayOfInputData[i] = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Вы ввели некорректные данные в массив, допустимы  только целые числа.");
+                    Environment.Exit(0);
+                }
+                
             }
 
-            Console.WriteLine("Введённые вами числа: " + arrayOfInputData[0] + " " + arrayOfInputData[1] + " " + arrayOfInputData[2]);
+            Console.WriteLine("Вывод массива:");
+
+            for (int i = 0; i < arrayOfInputData.Length; i++)
+            {
+                Console.WriteLine(arrayOfInputData[i]);
+            }
+
             Console.ReadLine();
         }
     }
