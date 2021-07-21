@@ -39,9 +39,9 @@ namespace ArrayFromKeyboard
                 
             }
 
-            Console.WriteLine("Вывод массива:");
+            Console.WriteLine("Вывод массива в обратном порядке:");
 
-            for (int i = 0; i < arrayOfInputData.Length; i++)
+            for (int i = arrayOfInputData.Length - 1; i >= 0; i--)
             {
                 Console.WriteLine(arrayOfInputData[i]);
             }
